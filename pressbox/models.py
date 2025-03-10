@@ -98,7 +98,7 @@ class PressImage(models.Model):
     class Meta:
         verbose_name = _("press image")
         verbose_name_plural = _("press images")
-        ordering = ['-sort_order', '-created_on', ]
+        ordering = ['-created_on', 'sort_order']
         
     def save(self):
         self.updated_on = datetime.now()
@@ -107,7 +107,5 @@ class PressImage(models.Model):
     def __unicode__(self):
         return self.alt_text
         
-    class Meta:
-        ordering = ['sort_order',]
     
     
